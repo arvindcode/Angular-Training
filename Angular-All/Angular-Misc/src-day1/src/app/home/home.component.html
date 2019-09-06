@@ -1,0 +1,31 @@
+<div class="container">
+  <div>
+    Totol value is  {{ 4 * 5 }}
+  </div>
+ 
+  <br/>
+  <br/>
+  <table border="1" width="500px">
+    <tr>
+        <th>SN.</th>
+      <th>FisrtName</th>
+      <th>Age</th>
+    </tr>
+    <tr *ngFor="let customer of customers; index as i" >
+        <th>{{i +1}}</th>
+        <th>{{customer.first_name}}</th>
+        <th>{{customer.Age}}</th>
+    </tr>
+  </table>
+  <br/>
+  <button routerLink="/home/">Data</button>
+   <br/>
+   
+  <input type="text" [value]="amount">
+ 
+
+  <button (click)="sayHi()">Say Hi</button>
+  
+  <router-outlet></router-outlet>
+ 
+</div>
