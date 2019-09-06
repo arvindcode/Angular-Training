@@ -1,0 +1,24 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+
+  <div>
+      <p>Heroes:</p>
+      <p *ngIf="heroes.length > 3">There are many heroes! </p>
+      <ul>
+        <li *ngFor="let hero of heroes">
+          {{ hero }}
+        </li>
+      </ul>
+   
+  </div>
+
+
+ 
+  </div>
+  <app-observable></app-observable>
+  <app-promise></app-promise>
+
+<router-outlet></router-outlet> 

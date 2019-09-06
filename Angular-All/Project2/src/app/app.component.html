@@ -1,0 +1,25 @@
+<p>This is test</p>
+
+<div>
+    <p>Available amount: {{amount}} </p>
+    <button (click)="deposit()">Deposit 100</button>
+</div>
+
+<input [value]="username" (input)="username = $event.target.value">
+
+<p>Hello {{username}}!</p>
+
+<h4>{{name}}</h4>
+<button (click)="vote(true)"  [disabled]="didVote">Agree</button>
+<button (click)="vote(false)" [disabled]="didVote">Disagree</button>
+
+<p>Interpolation Binding</p>
+<input type="text" value = {{myVariable}} disabled ={{disableApp}} />
+<p>Property Binding</p>
+<input type="text" value = {{myVariable}} [disabled] ="disableApp" />
+<p>Two way Binding</p>
+
+<input type="text" value = {{into}} (input) ="updateValue($event)" />
+<p>{{ into }}</p>
+
+<router-outlet></router-outlet>
