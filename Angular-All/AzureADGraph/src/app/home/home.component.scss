@@ -1,0 +1,25 @@
+.homeComponent {
+    
+	.title-1 {
+		font-size: 14px;
+		line-height: 1.29;
+		color: #24292d;
+	}
+	
+	label {
+		font-size: 13px;
+		font-weight: 600;
+		line-height: 1.38;
+		color: #24292d;
+	}
+	
+	.patientInfo {
+		padding-top: 10px;
+		padding-left: 20px;
+		
+		.title {
+			font-size: 16px;
+			color: #0073c0;
+		}
+	}
+}

@@ -1,0 +1,30 @@
+<header class="container-fluid mb-3 headerBg">
+	<div class="row">
+		<div class="col-9 py-2">
+		  <div class="icon-block"><img src="./assets/images/header_icon.png" alt="Otsuka" height="42" /></div>
+		  <div class="header-text"><a class="title-text" [routerLink]="['/']">Dataverse</a></div>		
+		</div>		
+		<ng-container *ngIf="isLoggedIn; then welcomeBlock"></ng-container>
+	</div>
+</header>
+
+<ng-template #welcomeBlock>
+	<div class="col-3 text-right py-2 right-block">  
+		<div class="notification"><img height="28" src="./assets/images/notification.png"></div>
+		<div class="welcome-user">
+			<span class="text1">Hi,&nbsp;</span>
+			<span>{{userInfo.name}}</span>
+		</div>
+		<div class="eclipse">{{userInfo.icon}}</div>
+		
+		<div class="btn-group" dropdown>
+		  <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle" aria-controls="dropdown-basic">
+			<span class="caret"></span>
+		  </button>
+		  <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+			  role="menu" aria-labelledby="button-basic">
+			<li role="menuitem"><a class="dropdown-item" href="#" (click)="logout()">LOGOUT</a></li>			
+		  </ul>
+		</div>	
+	</div>
+</ng-template>

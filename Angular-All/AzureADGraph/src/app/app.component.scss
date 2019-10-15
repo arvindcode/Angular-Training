@@ -1,0 +1,29 @@
+/*@media (max-width: 767px) {
+   On small screens, the nav menu spans the full width of the screen. Leave a space for it. 
+  .body-content {
+    padding-top: 50px;
+  }
+}*/
+
+app-root {  
+  min-height: 100vh;
+}
+
+p {
+  color: #276ebb;
+}
+
+h3 {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  color: #276ebb;
+}
+
+h4 {
+  color: #276ebb;
+  font-size: 16px;
+}
+
+h4 span {
+	font-weight: 600;
+}

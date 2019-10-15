@@ -1,0 +1,44 @@
+<div class="container-fluid homeComponent">
+	<form [formGroup]="studyForm">
+		<div class="row">
+			<div class="col-md-4 form-group title-1">
+				Please select the below categories for detailed analysis
+			</div>
+		</div>
+	
+		<div class="row">		
+			<div class="col-md-4 form-group">
+				<label for="study">STUDY</label>
+				<select formControlName="studyName" class="form-control form-control-sm px-1" id="study" (change)="getIdLists($event, 'change')">
+					<!--option value="">--select--</option-->
+					<option *ngFor="let study of studyLists" value={{study}}>{{study}}</option>
+				</select>
+			</div>
+			<div class="col-md-4 form-group">
+				<label for="id">ID</label>
+				<select formControlName="studyId" class="form-control form-control-sm px-1" id="id" (change)="getDmId($event, 'change')">
+					<!--option value="">--select--</option-->
+					<option *ngFor="let id of idLists" value={{id}}>{{id}}</option>
+				</select>
+			</div>
+		</div>
+	
+		<div class="card patientInfo">
+			<div class="row">
+				<div class="col-md-4 form-group title">Patient Information</div>
+			</div>
+			<div class="row">		
+				<div class="col-md-4 form-group">
+					<label for="dmid">DMID</label>
+					<input formControlName="dmId" type="input" class="form-control form-control-sm px-1" id="dmid" placeholder="" readonly>
+				</div>
+				<div class="col-md-4 form-group">
+					<label for="medicationId">DEMOGRAPHIC INFO</label>
+					<input formControlName="medicationId" type="input" class="form-control form-control-sm px-1" id="medicationId" placeholder="" readonly>
+				</div>
+			</div>
+		</div>	
+		
+		<pchart-component [dmId]="dmId"></pchart-component>
+	</form>
+</div>

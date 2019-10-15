@@ -1,0 +1,77 @@
+<ng-container *ngIf="showChartBlock; then chartContainer else loading"></ng-container>
+
+<ng-template #chartContainer>
+<div class="card chartBlock">
+	<div class="row toggleBtnBlock">
+		<div class="col-md-6 form-group">
+			<div class="toggleBtn" id="ingestion" (click)="showChart('ingestion')">INGESTION</div>
+			<div class="toggleBtn" id="coverage" (click)="showChart('coverage')">COVERAGE</div>
+			<div class="toggleBtn" id="patchPair" (click)="showChart('patchPair')">PATCH PAIR</div>
+			<div class="toggleBtn" id="missedDose" (click)="showChart('missedDose')">MISSED DOSE SURVEY</div>
+			<div class="toggleBtn" id="loginInfo" (click)="showChart('loginInfo')">PATIENT LOGIN</div>
+		</div>
+		
+		<div class="col-md-6 form-group legendsBlock">
+			<div class="legends">
+				<span class="title">INGESTION</span><br />
+				<span class="icon-1"></span>
+			</div>
+			<div class="vBar"></div>
+			<div class="legends">
+				<span class="title">PATCH PAIR</span><br />
+				<span class="icon-2"></span>
+			</div>
+			<div class="vBar"></div>
+			<div class="legends">
+				<span class="title">MISSED DOSE SURVEY</span><br />
+				<span class="icon-3">
+					<img src="./assets/images/patch_pair.png" alt="Otsuka" height="14" />
+				</span>
+			</div>
+			<div class="vBar"></div>
+			<div class="legends">
+				<span class="title">COVERAGE</span><br />
+				<span class="icon-4"></span>
+			</div>
+			<div class="vBar"></div>
+			<div class="legends">
+				<span class="title">PATIENT LOGIN</span><br />
+				<span class="icon-5">
+					<img src="./assets/images/login_info.png" alt="Otsuka" height="18" />
+				</span>
+				<!--span class="icon-5"></span-->
+			</div>
+		</div>
+	</div>
+				
+	<div class="row">
+		<div class="col-md-12 form-group">		
+			<ng-container *ngIf="errorChart; then errorChartBlock else showChartContainer"></ng-container>
+			
+			<ng-template #showChartContainer>
+				<div id="chartBlock" class="chartComponent" style="width:1150px;height:600px;"></div>
+			</ng-template>
+			
+			<ng-template #errorChartBlock>
+				<div class="errorBlock alert alert-info"><strong>No {{noDataErrorText}} data found!</strong></div>
+			</ng-template>
+		</div>
+	</div>
+</div>
+</ng-template>
+
+<ng-template #loading>
+	<div class="card chartBlock">
+		<ng-container *ngIf="errorDmid; then noChartError else progressLoading"></ng-container>
+
+		<ng-template #noChartError>
+			<div class="errorBlock alert alert-info"><strong>No Patient data found!</strong></div>
+		</ng-template>
+
+		<ng-template #progressLoading>
+			<div class="d-flex w-100 h-100 align-items-center justify-content-center" style="min-height:300px">
+				<div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+			</div>
+		</ng-template>
+	</div>
+</ng-template>

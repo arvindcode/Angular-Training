@@ -1,0 +1,114 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 12px;
+  background: #f3f6f8;
+  font-weight: 400;
+  line-height: 1;
+}
+
+/* Style for Date Picker */
+.ngb-dp-day, .ngb-dp-week-number, .ngb-dp-weekday {
+  height: 1.8rem;
+  width: 1.8rem;
+}
+  .ngb-dp-week-number, .ngb-dp-weekday {
+    line-height: 1.8rem;
+  }
+
+  /* Style form preloading animation */
+  .loading {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    background: rgba(0,0,0,0.5);
+  }
+
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+  transform: translateY(-25%);
+  top: 50%;
+}
+
+  .lds-ellipsis span {
+    font-size: 10px;
+    color: #fff;
+  }
+
+  .lds-ellipsis div {
+    position: absolute;
+    top: 12px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: #fff;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  }
+
+    .lds-ellipsis div:nth-child(1) {
+      left: 6px;
+      animation: lds-ellipsis1 0.6s infinite;
+    }
+
+    .lds-ellipsis div:nth-child(2) {
+      left: 6px;
+      animation: lds-ellipsis2 0.6s infinite;
+    }
+
+    .lds-ellipsis div:nth-child(3) {
+      left: 26px;
+      animation: lds-ellipsis2 0.6s infinite;
+    }
+
+    .lds-ellipsis div:nth-child(4) {
+      left: 45px;
+      animation: lds-ellipsis3 0.6s infinite;
+    }
+
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(19px, 0);
+  }
+}
+
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
